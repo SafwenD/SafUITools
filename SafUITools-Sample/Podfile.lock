@@ -1,0 +1,23 @@
+PODS:
+  - SafUITools (1.0.0)
+  - SideMenuSwift (2.0.9)
+
+DEPENDENCIES:
+  - SafUITools (from `../`)
+  - SideMenuSwift
+
+SPEC REPOS:
+  trunk:
+    - SideMenuSwift
+
+EXTERNAL SOURCES:
+  SafUITools:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SafUITools: 8594e8752fbc60f9652204336bc7dfd1621285b6
+  SideMenuSwift: 39f1922e225da4aaa8b16591037a929defe960c9
+
+PODFILE CHECKSUM: 4181ec019bd3ccd85040e0eeafa44720293945ed
+
+COCOAPODS: 1.11.3

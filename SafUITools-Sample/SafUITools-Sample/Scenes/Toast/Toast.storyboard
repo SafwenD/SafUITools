@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Toast-->
+        <scene sceneID="icl-Qg-AEE">
+            <objects>
+                <viewController id="Sqh-zp-jlc" customClass="ToastViewController" customModule="CleanRoomSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="InD-cg-9x8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUh-3b-x6C">
+                                <rect key="frame" x="167.5" y="460" width="79" height="30"/>
+                                <state key="normal" title="Show Toast"/>
+                                <connections>
+                                    <action selector="fromBottomTapped:" destination="Sqh-zp-jlc" eventType="touchUpInside" id="R7o-1p-oOh"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U7C-20-dJ5">
+                                <rect key="frame" x="142.5" y="188" width="129" height="32"/>
+                                <segments>
+                                    <segment title="Bottom"/>
+                                    <segment title="Top"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChoseDirection:" destination="Sqh-zp-jlc" eventType="valueChanged" id="JgI-yl-9iM"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWg-ro-ICO">
+                                <rect key="frame" x="81.5" y="193" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPo-wv-Vhc">
+                                <rect key="frame" x="171" y="498" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Hide Toast"/>
+                                <connections>
+                                    <action selector="hideToast:" destination="Sqh-zp-jlc" eventType="touchUpInside" id="YS4-QI-NLo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="U7C-20-dJ5" firstAttribute="top" secondItem="DEW-1B-McN" secondAttribute="top" constant="100" id="2xk-Cd-0ac"/>
+                            <constraint firstItem="U7C-20-dJ5" firstAttribute="centerX" secondItem="DEW-1B-McN" secondAttribute="centerX" id="ROa-RI-p26"/>
+                            <constraint firstItem="U7C-20-dJ5" firstAttribute="leading" secondItem="TWg-ro-ICO" secondAttribute="trailing" constant="8" id="TDt-N3-Ba0"/>
+                            <constraint firstItem="TWg-ro-ICO" firstAttribute="centerY" secondItem="U7C-20-dJ5" secondAttribute="centerY" id="eEg-9E-GOJ"/>
+                            <constraint firstItem="YUh-3b-x6C" firstAttribute="centerX" secondItem="DEW-1B-McN" secondAttribute="centerX" id="kCS-tS-22q"/>
+                            <constraint firstItem="YUh-3b-x6C" firstAttribute="centerY" secondItem="DEW-1B-McN" secondAttribute="centerY" id="xYq-vE-K5B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DEW-1B-McN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Toast" id="saV-Wq-E8H">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Oab-i0-WUe">
+                            <connections>
+                                <action selector="menuButtonTapped:" destination="Sqh-zp-jlc" id="9ap-Of-RC7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zeM-1a-vS4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="873.91304347826099" y="112.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1ng-CZ-teP">
+            <objects>
+                <navigationController storyboardIdentifier="Toast" automaticallyAdjustsScrollViewInsets="NO" id="YKC-gT-xrx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jDS-mw-Z6n">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Sqh-zp-jlc" kind="relationship" relationship="rootViewController" id="NtX-P1-ebr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZS-TC-OUt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33.333333333333336" y="112.5"/>
+        </scene>
+    </scenes>
+</document>
